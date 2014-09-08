@@ -14,7 +14,7 @@ A Servlet Filter is used to show how TitanGraph transactions can be managed with
 
 A Vagrant box is provided that hosts Cassandra and Elasticsearch.
 
-This project is built against Titan 0.5.0.
+This project is built against Titan 0.5.0. and TinkerPop 2.5.0.
 
 Getting Started
 ===============
