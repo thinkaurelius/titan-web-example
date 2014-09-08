@@ -2,15 +2,15 @@ titan-web-example
 =================
 This is an example project that shows one way to build a RESTful Java web app around Titan, Cassandra, and Elasticsearch.
 
-The application is built using Spring (with annotations based config), JAX-RS, and Jersey. It is assumed that you are already familiar with these technologies. 
+This application utilizes Cassandra in [Remote Server Mode](http://s3.thinkaurelius.com/docs/titan/0.5.0/cassandra.html#_remote_server_mode).
+
+The application is built using Spring (with annotations based config), JAX-RS, and Jersey. It is assumed that you are already familiar with these technologies.
 
 A Servlet Filter is used to show how TitanGraph transactions can be managed with a pre/post request Filter.
 
 This project also shows how Groovy classes can be injected into a Java web app to enable Gremlin Groovy sweetness. (See [GroovyGraphOp.groovy](src/main/groovy/com/thinkaurelius/titan/webexample/GroovyGraphOp.groovy).)
 
-The "graph of the gods" example data set is used.
-
-This application utilizes Cassandra in [Remote Server Mode](http://s3.thinkaurelius.com/docs/titan/0.5.0/cassandra.html#_remote_server_mode).
+The [Graph of the Gods](http://s3.thinkaurelius.com/docs/titan/0.5.0-SNAPSHOT/getting-started.html) example data set is used.
 
 A Vagrant box is provided that hosts Cassandra and Elasticsearch.
 
