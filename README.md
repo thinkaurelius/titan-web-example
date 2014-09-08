@@ -6,11 +6,11 @@ This application utilizes Cassandra in [Remote Server Mode](http://s3.thinkaurel
 
 The application is built using Spring (with annotations based config), JAX-RS, and Jersey. It is assumed that you are already familiar with these technologies.
 
-A Servlet Filter is used to show how TitanGraph transactions can be managed with a pre/post request Filter.
-
-This project also shows how Groovy classes can be injected into a Java web app to enable Gremlin Groovy sweetness. (See [GroovyGraphOp.groovy](src/main/groovy/com/thinkaurelius/titan/webexample/GroovyGraphOp.groovy).)
+This project shows how Groovy classes can be injected into a Java web app to enable Gremlin Groovy sweetness. (See [GroovyGraphOp.groovy](src/main/groovy/com/thinkaurelius/titan/webexample/GroovyGraphOp.groovy).)
 
 The [Graph of the Gods](http://s3.thinkaurelius.com/docs/titan/0.5.0/getting-started.html) example data set is used.
+
+A Servlet Filter is used to show how TitanGraph transactions can be managed with a pre/post request Filter.
 
 A Vagrant box is provided that hosts Cassandra and Elasticsearch.
 
