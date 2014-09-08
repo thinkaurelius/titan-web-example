@@ -10,9 +10,11 @@ A Servlet Filter is used to show how TitanGraph transactions can be managed with
 
 This project also shows how Groovy classes can be injected into a Java web app to enable Gremlin Groovy sweetness. (See [GroovyGraphOp.groovy](src/main/groovy/com/thinkaurelius/titan/webexample/GroovyGraphOp.groovy).)
 
-The [Graph of the Gods](http://s3.thinkaurelius.com/docs/titan/0.5.0-SNAPSHOT/getting-started.html) example data set is used.
+The [Graph of the Gods](http://s3.thinkaurelius.com/docs/titan/0.5.0/getting-started.html) example data set is used.
 
 A Vagrant box is provided that hosts Cassandra and Elasticsearch.
+
+This project is built against Titan 0.5.0.
 
 Getting Started
 ===============
