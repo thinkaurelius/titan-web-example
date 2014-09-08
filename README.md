@@ -10,7 +10,7 @@ This project shows how Groovy classes can be injected into a Java web app to ena
 
 The [Graph of the Gods](http://s3.thinkaurelius.com/docs/titan/0.5.0/getting-started.html) example data set is used.
 
-A Servlet Filter is used to show how TitanGraph transactions can be managed with a pre/post request Filter.
+A Servlet Filter is used to show how TitanGraph transactions can be managed with pre/post request Filters.
 
 A Vagrant box is provided that hosts Cassandra and Elasticsearch.
 
