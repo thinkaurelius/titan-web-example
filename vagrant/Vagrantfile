@@ -5,7 +5,7 @@ CASS_VER = "20x"
 ES_VER = "1.3.1"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "trusty64"
+  config.vm.box = "ubuntu/trusty64"
   config.vm.provision :shell, path: "bootstrap.sh", args: [VM_IP, CASS_VER, ES_VER]
   config.vm.network "private_network", ip: VM_IP
 
