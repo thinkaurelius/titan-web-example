@@ -71,7 +71,9 @@ _EOF_
   gpg --export --armor 4BD736A82B5C1B00 | sudo apt-key add -
   gpg --keyserver keyserver.ubuntu.com --recv-keys F758CE318D77295D
   gpg --export --armor F758CE318D77295D | sudo apt-key add -
- 
+  gpg --keyserver pgp.mit.edu --recv-keys 749D6EEC0353B12C
+  gpg --export --armor 749D6EEC0353B12C | sudo apt-key add -
+  
   # update repository
   sudo apt-get update
  
