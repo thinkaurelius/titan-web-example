@@ -2,6 +2,7 @@ package classesthatrunthings;
 
 import com.thinkaurelius.titan.core.TitanFactory;
 import com.thinkaurelius.titan.core.TitanGraph;
+import com.thinkaurelius.titan.core.util.TitanCleanup;
 import com.thinkaurelius.titan.example.GraphOfTheGodsFactory;
 import com.thinkaurelius.titan.webexample.TitanGraphFactory;
 import org.apache.commons.configuration.Configuration;
@@ -17,14 +18,14 @@ public class PopulateDB {
         TitanGraph g = TitanFactory.open(conf);
 
         // Uncomment the following if your graph is already populated and you want to clear it out first.
-        // g.shutdown();
+        // g.close();
         // TitanCleanup.clear(g);
         // g = TitanFactory.open(conf);
 
         // Interested in the source?
         // https://github.com/thinkaurelius/titan/blob/titan05/titan-core/src/main/java/com/thinkaurelius/titan/example/GraphOfTheGodsFactory.java
         GraphOfTheGodsFactory.load(g);
-        g.shutdown();
+        g.close();
         System.out.println("Success.");
     }
 }

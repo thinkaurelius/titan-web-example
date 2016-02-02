@@ -1,11 +1,12 @@
 package com.thinkaurelius.titan.webexample;
 
-import com.tinkerpop.blueprints.Graph;
-import com.tinkerpop.blueprints.Vertex;
+import org.apache.tinkerpop.gremlin.structure.Graph;
+import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Component
@@ -21,9 +22,11 @@ public class JavaGraphOp {
 
     public String listVertices() {
         List<String> gods = new ArrayList<String>();
-        Iterable<Vertex> itty = g.getVertices();
-        for (Vertex v : itty) {
-            gods.add((String) v.getProperty("name"));
+        Iterator<Vertex> itty = g.vertices();
+        Vertex v;
+        while (itty.hasNext()) {
+            v = itty.next();
+            gods.add((String) v.property("name").value());
         }
         return gods.toString();
     }

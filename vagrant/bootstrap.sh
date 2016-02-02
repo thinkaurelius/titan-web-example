@@ -9,7 +9,7 @@ apt-get update
 #--------------------
 # Misc 
 #--------------------
-sudo apt-get install unzip curl openjdk-7-jdk -y
+sudo apt-get install unzip curl openjdk-8-jdk -y
 
 #--------------------
 # Titan
@@ -18,7 +18,7 @@ sudo apt-get install unzip curl openjdk-7-jdk -y
 
 if [ ! -e titan* ]; then
   echo "Installing Titan"
-  wget https://s3.amazonaws.com/s3.thinkaurelius.com/downloads/titan/titan-0.5.0-hadoop2.zip > /dev/null
+  wget https://s3.amazonaws.com/s3.thinkaurelius.com/downloads/titan/titan-1.0.0-hadoop2.zip > /dev/null
   unzip titan-*.zip
 
 	# Clear existing conf file
