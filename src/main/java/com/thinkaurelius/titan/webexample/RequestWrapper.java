@@ -36,7 +36,7 @@ public class RequestWrapper implements ContainerResponseFilter, ContainerRequest
      */
     @Override
     public ContainerRequest filter(ContainerRequest containerRequest) {
-        g.rollback(); // ensure there is not a stale transaction
+        g.tx().rollback(); // ensure there is not a stale transaction
         return containerRequest;
     }
 
@@ -45,7 +45,7 @@ public class RequestWrapper implements ContainerResponseFilter, ContainerRequest
      */
     @Override
     public ContainerResponse filter(ContainerRequest containerRequest, ContainerResponse containerResponse) {
-        g.rollback(); // perform a rollback to clean up any dangling transactions
+        g.tx().rollback(); // perform a rollback to clean up any dangling transactions
         return containerResponse;
     }
 }

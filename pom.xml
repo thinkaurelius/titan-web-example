@@ -21,7 +21,7 @@
 
     <properties>
         <spring.version>4.0.3.RELEASE</spring.version>
-        <titan.version>0.5.0</titan.version>
+        <titan.version>1.0.0</titan.version>
     </properties>
 
     <dependencies>
@@ -50,9 +50,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.tinkerpop.gremlin</groupId>
+            <groupId>org.apache.tinkerpop</groupId>
             <artifactId>gremlin-groovy</artifactId>
-            <version>2.5.0</version>
+            <version>3.0.0-incubating</version>
         </dependency>
 
 

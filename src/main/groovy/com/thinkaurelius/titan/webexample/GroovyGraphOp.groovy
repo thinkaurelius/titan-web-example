@@ -1,7 +1,8 @@
 package com.thinkaurelius.titan.webexample
 
-import com.tinkerpop.blueprints.Graph
-import com.tinkerpop.gremlin.groovy.Gremlin
+import org.apache.tinkerpop.gremlin.groovy.loaders.GremlinLoader
+import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource
+import org.apache.tinkerpop.gremlin.structure.Graph;
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
@@ -15,22 +16,24 @@ import org.springframework.stereotype.Component
 class GroovyGraphOp {
     // This enables the Gremlin magic.
     static {
-        Gremlin.load()
+        GremlinLoader.load()
     }
 
     // Autowired via setter. I leave this as a blueprints.Graph unless I have to do Titan specific stuff.
-    private Graph g
+    private Graph graph
+    private GraphTraversalSource g
 
     @Autowired
     // I like to autowire via setters because it makes it easy to write spring-free unit tests.
     public void setGraph(TitanGraphFactory gf) {
-        this.g = gf.getGraph()
+        this.graph = gf.getGraph()
+        this.g = this.graph.traversal()
     }
 
     public String getPlutosBrothers() {
-        def plutosBrothers = []
+        def plutosBrothers
         // sweet gremlin all up in my java project. aw yeah...
-        g.V("name", "pluto").both("brother").dedup().name.store(plutosBrothers).iterate()
+        plutosBrothers = g.V().has("name", "pluto").both("brother").dedup().values("name").toList()
         return plutosBrothers.toString()
     }
 }
